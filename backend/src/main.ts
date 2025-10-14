@@ -9,10 +9,11 @@ async function bootstrap() {
 
   // Enable CORS for frontend
   app.enableCors({
-    origin: 'http://localhost:5173', // frontend URL
+    origin: ['http://localhost:5173', 'https://your-frontend.vercel.app'], // allow both
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
-    credentials: true, // allow cookies/auth headers
+    credentials: true,
   });
+  
 
   app.use(cookieParser());
   app.setGlobalPrefix('api');
